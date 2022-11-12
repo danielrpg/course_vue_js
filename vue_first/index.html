@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div id="app">{{ message }}</div>
+    <div id="app"></div>
 
     <script>
         const { createApp } = Vue
@@ -20,7 +20,8 @@
                 return {
                     message: 'Hello Vue!'
                 }
-            }
+            },
+            template: `<p>{{message}}</p>`
         }).mount('#app')
     </script>
 
