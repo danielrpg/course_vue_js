@@ -18,10 +18,10 @@
         createApp({
             data() {
                 return {
-                    message: 'Hello Vue!'
+                    message: '<p>Hello Vue!</p>'
                 }
             },
-            template: `<div v-text="message"></div>`
+            template: `<div v-html="message"></div>`
         }).mount('#app')
     </script>
 
