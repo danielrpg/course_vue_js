@@ -11,22 +11,29 @@
 
 <body>
     <div id="app"></div>
-
     <script>
         const { createApp } = Vue
 
         createApp({
             data() {
                 return {
-                    attr: "src",
-                    img: "https://www.meme-arsenal.com/memes/d281768ea967147c58fb1f1bb80988f4.jpg",
-                    alt: "This is an example of text alternative"
+                    counter: 0
                 }
             },
-            template: `<img v-bind:[attr]="img" v-bind:alt="alt" />`
+            methods: {
+                increment() {
+                    this.counter++;
+                },
+                decrement() {
+                    this.counter--;
+                }
+            },
+            template: `<h1>{{counter}}</h1>
+                <button v-on:click="increment">+1</button>
+                <button v-on:click="decrement">-1</button>
+            `,
         }).mount('#app')
     </script>
-
 </body>
 
 </html>
