@@ -17,17 +17,16 @@
         createApp({
             data() {
                 return {
-                    counter: 0
+                    text: "hello world"
                 }
             },
             methods: {
-                submit() {
-                    this.counter++;
+                input(e) {
+                    this.text = e.target.value;
                 },
             },
-            template: `<form v-on:submit.prevent="submit">
-                <button>{{counter}}</button>
-                </form>
+            template: `<p>{{ text }}</p>
+                <input type="text" v-on:input="input" />
             `,
         }).mount('#app')
     </script>
