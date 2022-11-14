@@ -18,11 +18,12 @@
         createApp({
             data() {
                 return {
+                    attr: "src",
                     img: "https://www.meme-arsenal.com/memes/d281768ea967147c58fb1f1bb80988f4.jpg",
                     alt: "This is an example of text alternative"
                 }
             },
-            template: `<img v-bind:src="img" v-bind:alt="alt" />`
+            template: `<img v-bind:[attr]="img" v-bind:alt="alt" />`
         }).mount('#app')
     </script>
 
