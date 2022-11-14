@@ -20,16 +20,10 @@
                     text: "hello world"
                 }
             },
-            methods: {
-                input(e) {
-                    this.text = e.target.value;
-                },
-            },
             template: `<p>{{ text }}</p>
                 <input 
                     type="text" 
-                    v-on:input="input" 
-                    v-bind:value="text"
+                    v-model="text"
                 />
             `,
         }).mount('#app')
